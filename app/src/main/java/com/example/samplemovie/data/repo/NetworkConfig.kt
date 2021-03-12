@@ -4,12 +4,14 @@ import com.androidnetworking.interceptors.HttpLoggingInterceptor
 import com.example.samplemovie.BuildConfig.API_KEY
 import com.example.samplemovie.BuildConfig.BASE_URL
 import com.example.samplemovie.data.model.ResponseData
+import com.example.samplemovie.data.model.ReviewerData
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 object NetworkConfig {
@@ -55,5 +57,14 @@ interface ApiInterface {
     fun getNowPlayingMovies(
         @Query("api_key") apiKey: String? = API_KEY,
         @Query("language") language: String? = "en-US",
+        @Query("page") page: Int = 1
     ): Call<ResponseData>
+
+    @GET("movie/{movie_id}/reviews")
+    fun getMovieReviews(
+        @Path("movie_id") movieId: Int?,
+        @Query("api_key") apiKey: String? = API_KEY,
+        @Query("language") language: String? = "en-US",
+        @Query("page") page: Int = 1
+    ): Call<ReviewerData>
 }

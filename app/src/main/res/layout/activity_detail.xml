@@ -14,8 +14,7 @@
         android:minHeight="?attr/actionBarSize"
         app:layout_constraintTop_toTopOf="parent"
         app:theme="@style/ThemeOverlay.AppCompat"
-        app:titleTextColor="@android:color/white">
-    </androidx.appcompat.widget.Toolbar>
+        app:titleTextColor="@android:color/white"/>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_detail"
@@ -23,13 +22,14 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tb_detail"
         android:layout_margin="5dp"
-        app:layout_constraintTop_toBottomOf="@id/tb_detail"
-        android:elevation="5dp">
+        android:elevation="5dp"
+        app:layout_constraintTop_toBottomOf="@id/tb_detail">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="5dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="5dp">
 
             <ImageView
                 android:id="@+id/iv_img_movie"
@@ -41,23 +41,25 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="5dp">
+
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <TextView
                         android:id="@+id/tv_title_movie"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginEnd="28dp"
                         android:layout_gravity="start|center_vertical"
+                        android:layout_marginEnd="28dp"
+                        android:ellipsize="end"
+                        android:textStyle="bold"
                         app:autoSizeMaxTextSize="20sp"
                         app:autoSizeMinTextSize="10sp"
                         app:autoSizeTextType="uniform"
-                        android:ellipsize="end"
-                        android:textStyle="bold"
                         tools:text="Title Movie" />
 
                     <ImageButton
@@ -84,8 +86,8 @@
                     android:id="@+id/tv_overview"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
                     android:layout_marginStart="15dp"
+                    android:layout_marginTop="20dp"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     tools:text="Overview" />
@@ -102,4 +104,41 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
+    <TextView
+        android:id="@+id/tv_label_review"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="Review Movie"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/cv_detail" />
+
+    <TextView
+        android:id="@+id/tv_no_review"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="190dp"
+        android:layout_marginEnd="10dp"
+        android:gravity="center"
+        android:text="No Review"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_label_review"
+        app:layout_constraintTop_toTopOf="@id/cv_detail" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_review_moview_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:nestedScrollingEnabled="false"
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_label_review"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
