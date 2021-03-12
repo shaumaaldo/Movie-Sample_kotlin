@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/firstButton"
+        android:layout_width="@dimen/dimen_0"
+        android:layout_height="@dimen/dimen_60"
+        android:gravity="start|center_vertical"
+        android:textAllCaps="false"
+        android:paddingStart="25dp"
+        android:paddingEnd="0dp"
+        android:background="@color/white"
+        android:text="Popular"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/secondButton"
+        android:layout_width="@dimen/dimen_0"
+        android:layout_height="@dimen/dimen_60"
+        android:gravity="start|center_vertical"
+        android:textAllCaps="false"
+        android:background="@color/white"
+        android:paddingStart="25dp"
+        android:paddingEnd="0dp"
+        android:text="Upcoming"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/firstButton" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/thirdButton"
+        android:layout_width="@dimen/dimen_0"
+        android:layout_height="@dimen/dimen_60"
+        android:gravity="start|center_vertical"
+        android:textAllCaps="false"
+        android:background="@color/white"
+        android:paddingStart="25dp"
+        android:paddingEnd="0dp"
+        android:text="Top Rated"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/secondButton" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/fourthButton"
+        android:layout_width="@dimen/dimen_0"
+        android:layout_height="@dimen/dimen_60"
+        android:gravity="start|center_vertical"
+        android:textAllCaps="false"
+        android:background="@color/white"
+        android:paddingStart="25dp"
+        android:paddingEnd="0dp"
+        android:text="Now Playing"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/thirdButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
